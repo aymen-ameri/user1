@@ -1,0 +1,20 @@
+server:
+  port: 9003
+
+spring:
+  zipkin:
+    base-url: http://zipkin:9411 # Zipkin server URL
+  sleuth:
+    sampler:
+      probability: 1.0
+
+  application:
+    name: USER-SERVICE
+  cloud:
+    consul:
+      host: consul
+      port: 8500
+
+
+
+
