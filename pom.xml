@@ -46,19 +46,6 @@
             <artifactId>spring-boot-starter-actuator</artifactId>
         </dependency>
 
-   
-
-
-<dependency>
-      <groupId>io.micrometer</groupId>
-      <artifactId>micrometer-tracing-bridge-brave</artifactId>
-    </dependency>
-    <dependency>
-      <groupId>io.zipkin.reporter2</groupId>
-      <artifactId>zipkin-reporter-brave</artifactId>
-    </dependency>
-
-             
         <!-- Micrometer Tracing Dependencies -->
         <dependency>
             <groupId>io.micrometer</groupId>
@@ -67,6 +54,13 @@
         <dependency>
             <groupId>io.micrometer</groupId>
             <artifactId>micrometer-registry-prometheus</artifactId>
+        </dependency>
+
+        <!-- Jaeger Tracing -->
+        <dependency>
+            <groupId>io.opentracing.contrib</groupId>
+            <artifactId>opentracing-spring-jaeger-cloud-starter</artifactId>
+            <version>3.3.1</version> <!-- Specify the version of Jaeger -->
         </dependency>
 
         <!-- Other Dependencies -->
