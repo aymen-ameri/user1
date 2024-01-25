@@ -2,17 +2,28 @@ server:
   port: 9003
 
 spring:
-  zipkin:
-    base-url: http://zipkin:9411 # Corrected Zipkin server URL
-  sleuth:
-    sampler:
-      probability: 1.0
   application:
     name: USER-SERVICE
   cloud:
     consul:
       host: consul
       port: 8500
+  sleuth:
+    sampler:
+      probability: 1.0 # Sample all requests for demonstration purposes
+
+# Jaeger Tracing Configuration
+opentracing:
+  jaeger:
+    enabled: true
+    udp-sender:
+      host: jaeger # Jaeger Agent Host - replace with actual hostname if different
+      port: 6831  # Jaeger Agent Port
+    log-spans: true
+    http-sender:
+      url: http://jaeger:14268/api/traces # Jaeger Collector URL - replace if different
+    const-sampler:
+      decision: true # Sample all traces
 
 management:
   endpoints:
