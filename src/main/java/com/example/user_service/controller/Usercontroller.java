@@ -5,8 +5,11 @@ import com.example.user_service.entity.Userssz;
 import com.example.user_service.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.CrossOrigin;
+
 
 @RestController
+@CrossOrigin(origins = "http://localhost:4200")
 @RequestMapping("users")
 public class Usercontroller {
     @Autowired
