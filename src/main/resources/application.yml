@@ -12,9 +12,18 @@ spring:
     sampler:
       probability: 1.0 # Sample all requests for demonstration purposes
 
-# Zipkin Tracing Configuration
-zipkin:
-  baseUrl: http://zipkin:9411 # Zipkin Server URL - replace with actual hostname if different
+# Jaeger Tracing Configuration
+opentracing:
+  jaeger:
+    enabled: true
+    udp-sender:
+      host: jaeger # Jaeger Agent Host - replace with actual hostname if different
+      port: 6831  # Jaeger Agent Port
+    log-spans: true
+    http-sender:
+      url: http://jaeger:14268/api/traces # Jaeger Collector URL - replace if different
+    const-sampler:
+      decision: true # Sample all traces
 
 management:
   endpoints:
